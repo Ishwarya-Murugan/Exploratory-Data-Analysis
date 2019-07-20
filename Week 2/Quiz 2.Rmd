@@ -1,0 +1,39 @@
+---
+title: "Quiz for Week 2"
+output:
+  html_document:
+    df_print: paged
+---
+
+What is produced by the following code?
+
+```{r}
+
+library(nlme)
+library(lattice)
+
+head(BodyWeight)
+xyplot(weight ~ Time | Diet, BodyWeight)  
+  
+  
+```
+Load the `airquality' dataset form the datasets package in R
+
+
+I am interested in examining how the relationship between ozone and wind speed varies across each month. What would be the appropriate code to visualize that using ggplot2?
+
+
+```{r}
+library(datasets)
+library(ggplot2)
+data(airquality)
+
+head(airquality)
+?lpoints
+
+airquality = transform(airquality, Month = factor(Month))
+qplot(Wind, Ozone, data = airquality, facets = . ~ Month)
+
+
+```
+
